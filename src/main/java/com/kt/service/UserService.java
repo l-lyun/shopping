@@ -1,5 +1,7 @@
 package com.kt.service;
 
+import java.time.LocalDateTime;
+
 import org.springframework.stereotype.Service;
 
 import com.kt.domain.User;
@@ -22,10 +24,11 @@ public class UserService {
 			request.password(),
 			request.name(),
 			request.email(),
+			request.mobile(),
 			request.birth(),
 			request.gender(),
-			request.createdAt(),
-			request.updatedAt()
+			LocalDateTime.now(),
+			LocalDateTime.now()
 		);
 
 		// repository로 넘김
