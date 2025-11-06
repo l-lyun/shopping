@@ -1,6 +1,7 @@
 package com.kt.controller;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -65,13 +66,18 @@ public class UserController {
 	// 1. 바디에 id값을 같이 받는다
 	// 2. uri에 id값을 넣는다. /users/{id}/update-password
 	// 3. 인증/인가 객체에서 id값을 꺼낸다. (V)
-	@PutMapping("/{id}/update-password")
+	@PutMapping("/{id}/update-passw	ord")
 	@ResponseStatus(HttpStatus.OK)
 	public void updatePassword(
-		@PathVariable Integer id,
+		@PathVariable Long id,
 		@RequestBody @Valid UserUpdatePasswordRequest request
 	) {
 		userService.changePassword(id, request.oldPassword(), request.newPassword());
 	}
 
+	@DeleteMapping("{/id}")
+	@ResponseStatus(HttpStatus.OK)
+	public void delete(@PathVariable Long id) {
+		userService.delete(id);
+	}
 }
