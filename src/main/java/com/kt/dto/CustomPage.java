@@ -2,7 +2,7 @@ package com.kt.dto;
 
 import java.util.List;
 
-import com.kt.domain.User;
+import com.kt.domain.user.User;
 
 // 프론트엔드에서 페이징을 구현할 때 필요한 정보
 // // 한화면에 몇개 보여줄것인가? => limit

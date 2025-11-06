@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kt.domain.User;
+import com.kt.domain.user.User;
 import com.kt.service.UserService;
 
 import lombok.RequiredArgsConstructor;
